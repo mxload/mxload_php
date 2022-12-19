@@ -1,0 +1,34 @@
+{
+    "name": "drecom/buuurst_dev_php",
+    "type": "library",
+    "license": "MIT",
+    "version": "0.1",
+    "autoload": {
+        "psr-4": {
+            "BuuurstDev\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BuuurstDevTests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Drecom Co.,Ltd."
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "9.*",
+        "mockery/mockery": "^1.5",
+        "ramsey/uuid": "^4.7"
+    },
+    "require": {
+        "illuminate/support": "^8.0|^9.0",
+        "illuminate/http": "^8.0|^9.0",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}
