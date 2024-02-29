@@ -1,6 +1,6 @@
-# drecom/buuurst_dev_php
+# mxload/mxload_php
 
-BuuurstDev service PHP client
+Mxload service PHP client
 This client currently supports Laravel framework only.
 
 ## Installation
@@ -8,7 +8,7 @@ This client currently supports Laravel framework only.
 ### Install from composer
 
 ```bash
-$ composer require drecom/buuurst_dev_php
+$ composer require mxload/mxload_php
 ```
 
 ### Install from git
@@ -20,7 +20,7 @@ Add repository to your project's composer.json
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/drecom/buuurst_dev_php"
+            "url": "https://github.com/mxload/mxload_php"
         }
     ],
     ...
@@ -37,37 +37,37 @@ Add below to `app/Http/Kernel.php`
 ```php
     protected $middleware = [
         ...
-        \BuuurstDev\Laravel\Middleware::class,
+        \Mxload\Laravel\Middleware::class,
     ];
 ```
 
-Then, Create configuration file `config/buuurst_dev.php`
+Then, Create configuration file `config/mxload.php`
 
 ```php
 <?php
 return [
     /*
 |--------------------------------------------------------------------
-| Buuurst dev configurations
+| Mxload configurations
 |--------------------------------------------------------------------
 */
 
-    'enabled' => env('BUUURST_DEV_ENABLED', true),
-    'collector_url' => env('BUUURST_DEV_COLLECTOR_URL', 'https://lambda-public.buuurst.dev/put-request-log'),
-    'project_id' => env('BUUURST_DEV_PROJECT_ID', 'YOUR_PROJECT_ID'),
-    'service_key' => env('BUUURST_DEV_SERVICE_KEY', 'YOUR_SERVICE_KEY'),
-    'custom_headers' => env('BUUURST_DEV_CUSTOM_HEADERS', []),
-    'ignore_paths' => env('BUUURST_DEV_IGNORE_PATHS', []),
+    'enabled' => env('MXLOAD_ENABLED', true),
+    'collector_url' => env('MXLOAD_COLLECTOR_URL', 'https://lambda-public.mxload.mx/put-request-log'),
+    'project_id' => env('MXLOAD_PROJECT_ID', 'YOUR_PROJECT_ID'),
+    'service_key' => env('MXLOAD_SERVICE_KEY', 'YOUR_SERVICE_KEY'),
+    'custom_headers' => env('MXLOAD_CUSTOM_HEADERS', []),
+    'ignore_paths' => env('MXLOAD_IGNORE_PATHS', []),
 ];
 ```
 
-* `buuurst_dev.enabled`
+* `mxload.enabled`
   * switch enabled/disabled this middleware
-* `buuurst_dev.project_id`
+* `mxload.project_id`
   * loadtest target project id
-* `buuurst_dev.service_key`
-  * get at account info page in BUUURST.DEV BETA
-* `buuurst_dev.custom_headers` (optional)
+* `mxload.service_key`
+  * get at account info page in MXLOAD
+* `mxload.custom_headers` (optional)
   * specify custom HTTP header names
-* `buuurst_dev.ignore_paths` (optional)
+* `mxload.ignore_paths` (optional)
   * ignore sending request log when request path is in ignore_paths

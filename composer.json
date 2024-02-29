@@ -1,16 +1,16 @@
 {
-    "name": "drecom/buuurst_dev_php",
+    "name": "mxload/mxload_php",
     "type": "library",
     "license": "MIT",
     "version": "0.1",
     "autoload": {
         "psr-4": {
-            "BuuurstDev\\": "src/"
+            "Mxload\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BuuurstDevTests\\": "tests/"
+            "MxloadTests\\": "tests/"
         }
     },
     "authors": [

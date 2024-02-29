@@ -1,6 +1,6 @@
 <?php
 
-namespace BuuurstDev\Laravel;
+namespace Mxload\Laravel;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Config;
 class Middleware
 {
     /**
-     * Buuurst.dev capture middleware
+     * Mxload capture middleware
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
@@ -20,7 +20,7 @@ class Middleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Config::get('buuurst_dev.enabled') || !$this->isCollectablePath($request->getPathInfo())) {
+        if (!Config::get('mxload.enabled') || !$this->isCollectablePath($request->getPathInfo())) {
             return $next($request);
         }
 
@@ -67,11 +67,11 @@ class Middleware
     private function collect($params)
     {
         $data = array_merge($params, [
-            'project_id' => Config::get('buuurst_dev.project_id'),
-            'service_key' => Config::get('buuurst_dev.service_key'),
+            'project_id' => Config::get('mxload.project_id'),
+            'service_key' => Config::get('mxload.service_key'),
         ]);
 
-        $response = Http::post(Config::get('buuurst_dev.collector_url'), $data);
+        $response = Http::post(Config::get('mxload.collector_url'), $data);
     }
 
     private function extractHeaders(Request $request)
@@ -92,7 +92,7 @@ class Middleware
             }
         }
 
-        $custom_headers = Config::get('buuurst_dev.custom_headers');
+        $custom_headers = Config::get('mxload.custom_headers');
         if (empty($custom_headers)) {
             return $extract_headers;
         }
@@ -109,7 +109,7 @@ class Middleware
 
     private function isCollectablePath(string $path)
     {
-        $ignore_paths = Config::get('buuurst_dev.ignore_paths');
+        $ignore_paths = Config::get('mxload.ignore_paths');
         if (empty($ignore_paths)) {
             return true;
         }
