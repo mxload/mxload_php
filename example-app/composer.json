@@ -9,7 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "drecom/buuurst_dev_php": "*",
+        "mxload/mxload_php": "*",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
@@ -69,7 +69,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/vendor/buuurst_dev_laravel",
+            "url": "/vendor/mxload_laravel",
             "options": {
                 "symlink": true
             }

@@ -1,16 +1,16 @@
 {
-    "name": "drecom/buuurst_dev_php",
+    "name": "mxload/mxload_php",
     "type": "library",
     "license": "MIT",
     "version": "0.1",
     "autoload": {
         "psr-4": {
-            "BuuurstDev\\": "src/"
+            "Mxload\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BuuurstDevTests\\": "tests/"
+            "MxloadTests\\": "tests/"
         }
     },
     "authors": [
@@ -24,8 +24,8 @@
         "ramsey/uuid": "^4.7"
     },
     "require": {
-        "illuminate/support": "^8.0|^9.0",
-        "illuminate/http": "^8.0|^9.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "illuminate/http": "^8.0|^9.0|^10.0",
         "guzzlehttp/guzzle": "^7.5"
     },
     "scripts": {
